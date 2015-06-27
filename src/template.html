@@ -60,74 +60,95 @@
 
 
     {block:PermalinkPage}
-    <div class="{block:Photo}post {/block:Photo}{block:Photoset}post post--photoset {/block:Photoset}g-row">
+    {block:Posts}
       {block:Photo}
-      <div class="g-col md-2/3">
-        <img class="post__image" src="{PhotoURL-HighRes}" alt="">
-      </div>
-      <div class="g-col md-1/3">
-        <dl class="post__meta">
-          <dt>Description</dt>
-          <dd>{block:ContentSource}<a href="{SourceURL}">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
+      <div class="post g-row">
+        <div class="g-col md-2/3">
+          <img class="post__image" src="{PhotoURL-HighRes}" alt="">
+        </div>
+        <div class="g-col md-1/3">
+          <dl class="post__meta">
+            <dt>Description</dt>
+            <dd>{block:ContentSource}<a href="{SourceURL}">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
 
-          <dt>Posted</dt>
-          <dd>{Year} {Month} {DayOfMonth}</dd>
+            <dt>Posted</dt>
+            <dd>{Year} {Month} {DayOfMonth}</dd>
 
-          {block:RebloggedFrom}
-          <dt>Via</dt>
-          <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
-          {/block:RebloggedFrom}
+            {block:RebloggedFrom}
+            <dt>Via</dt>
+            <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
+            {/block:RebloggedFrom}
 
-          {block:HasTags}
-          <dt>Tags</dt>
-          {block:Tags}
-          <dd><a href="{TagURL}">{Tag}</a></dd>
-          {/block:Tags}
-          {/block:HasTags}
-        </dl>
+            {block:HasTags}
+            <dt>Tags</dt>
+            {block:Tags}
+            <dd><a href="{TagURL}">{Tag}</a></dd>
+            {/block:Tags}
+            {/block:HasTags}
+          </dl>
+
+          <ul class="post__actions">
+            <li>{LikeButton color="white" size="50"}<a class="icon icon--heart" href="javascript:"></a></li>
+            <li><a class="icon icon--reblog" href="{ReblogURL}" target="_blank"></a></li>
+            <li><a class="icon icon--follow" href="https://www.tumblr.com/follow/BLOG_SUBDOMAIN" target="_blank"></a></li>
+            <li><a class="icon icon--pinterest" href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-HighRes}&amp;description={PlaintextCaption}" target="_blank"></a></li>
+            <li><a class="icon icon--twitter" href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank"></a></li>
+          </ul>
+        </div>
       </div>
       {/block:Photo}
 
       {block:Photoset}
-      <div class="g-col md-2/3">
-        {block:Photos}
-        <img class="post__image" src="{PhotoURL-HighRes}" alt="">
-        {/block:Photos}
-      </div>
-      <div class="g-col md-1/3">
-        <dl class="post__meta">
-          <dt>Description</dt>
-          <dd>{block:ContentSource}<a href="{SourceURL}">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
+      <div class="post post--photoset g-row">
+        <div class="g-col md-2/3">
+          {block:Photos}
+          <img class="post__image" src="{PhotoURL-HighRes}" alt="">
+          {/block:Photos}
+        </div>
+        <div class="g-col md-1/3">
+          <dl class="post__meta">
+            <dt>Description</dt>
+            <dd>{block:ContentSource}<a href="{SourceURL}">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
 
-          <dt>Posted</dt>
-          <dd>{Year} {Month} {DayOfMonth}</dd>
+            <dt>Posted</dt>
+            <dd>{Year} {Month} {DayOfMonth}</dd>
 
-          {block:RebloggedFrom}
-          <dt>Via</dt>
-          <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
-          {/block:RebloggedFrom}
+            {block:RebloggedFrom}
+            <dt>Via</dt>
+            <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
+            {/block:RebloggedFrom}
 
-          {block:HasTags}
-          <dt>Tags</dt>
-          {block:Tags}
-          <dd><a href="{TagURL}">{Tag}</a></dd>
-          {/block:Tags}
-          {/block:HasTags}
-        </dl>
+            {block:HasTags}
+            <dt>Tags</dt>
+            {block:Tags}
+            <dd><a href="{TagURL}">{Tag}</a></dd>
+            {/block:Tags}
+            {/block:HasTags}
+          </dl>
+
+          <ul class="post__actions">
+            <li>{LikeButton color="white" size="50"}<a class="icon icon--heart" href="javascript:"></a></li>
+            <li><a class="icon icon--reblog" href="{ReblogURL}" target="_blank"></a></li>
+            <li><a class="icon icon--follow" href="https://www.tumblr.com/follow/BLOG_SUBDOMAIN" target="_blank"></a></li>
+            <li><a class="icon icon--twitter" href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank"></a></li>
+          </ul>
+        </div>
       </div>
       {/block:Photoset}
 
       {block:Text}
-      <div class="g-col">
-        {block:Title}
-        <a href="{Permalink}">{Title}</a>
-        {/block:Title}
-        {block:Body}
-        {Body}
-        {/block:Body}
+      <div class="post post--photoset g-row">
+        <div class="g-col">
+          {block:Title}
+          <a href="{Permalink}">{Title}</a>
+          {/block:Title}
+          {block:Body}
+          {Body}
+          {/block:Body}
+        </div>
       </div>
       {/block:Text}
-    </div>
+    {block:Posts}
     {/block:PermalinkPage}
   </main>
 
