@@ -1,0 +1,62 @@
+//===================================================================
+//  PERMALINK VIEW
+//===================================================================
+@import "imports";
+
+
+.g-row {
+  @include grid-row(855px);
+}
+
+
+.g-col {
+  @include grid-column;
+  width: 100%;
+}
+
+
+@include media-query(medium) {
+  @include width-classes(3, md-);
+}
+
+
+.post {
+  overflow: hidden;
+}
+
+
+.post--photoset {
+  .post__image {
+    margin-bottom: 10px;
+  }
+}
+
+
+.post__meta {
+  @include media-query($max: medium) {
+    padding-top: 2em;
+  }
+
+  dt {
+    margin-top: 3em;
+    border-top: 1px solid #ccc;
+    padding-top: .75em;
+    font-size: rem(11px);
+    font-weight: 600;
+    line-height: (19px / 11px);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  dd {
+    line-height: (19px / $base-font-size);
+    color: #666;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
