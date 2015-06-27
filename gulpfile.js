@@ -13,7 +13,7 @@ gulp.task('sass', function compileSass(){
       precision: 10,
       sourceComments: false
     }))
-    .pipe(gulp.dest('./assets'));
+    .pipe(gulp.dest('./target'));
 });
 
 
@@ -22,7 +22,7 @@ gulp.task('sync', function(){
     .create()
     .init({
       browser: 'firefox',
-      files: ['./src/*', './assets/*'],
+      files: ['./src/*', './assets/*', './target/*'],
       port: 7000,
       server: {
         baseDir: '.'
