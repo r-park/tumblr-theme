@@ -25,19 +25,19 @@ $(function() {
       // Infinite scroll
       //-------------------------------
 
-      var infiniteScroll = new InfiniteScroll({
-        item: '.post',
-        pagination: '.pagination__next',
-        scrollBuffer: 1500,
+      var infinite = infiniteScroll({
+        itemSelector: '.post',
+        nextSelector: '.pagination__next',
+        threshold: 1500,
         waitForImages: true
       });
 
-      infiniteScroll.on('load:end', function(data, resume){
+      infinite.on('load:end', function(data, resume){
         quartz.append(data.items);
         Tumblr.LikeButton.get_status_by_page(data.page);
         resume();
       });
 
-      infiniteScroll.load();
+      infinite.load();
     });
 });
