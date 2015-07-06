@@ -148,7 +148,7 @@ $icon-dot: url('http://static.tumblr.com/gpf0ro1/BKonr1j9u/dot-4x4.svg') 50% top
 
   &.liked + .icon--heart {
     color: #d75f45;
-    animation: heart 150ms ease-in-out;
+    animation: heart 200ms ease-in-out;
   }
 }
 
