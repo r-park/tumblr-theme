@@ -1,7 +1,7 @@
 //===================================================================
 //  INDEX VIEW
 //===================================================================
-@import "imports";
+@import "common";
 
 
 .g-row {
@@ -30,7 +30,7 @@
 
 .post {
   position: relative;
-  margin-bottom: $grid-gutter-size;
+  margin-bottom: 30px;
   overflow: hidden;
   background: #fff;
 
@@ -41,8 +41,7 @@
 
 
 .post__overlay {
-  @include flex-center-all;
-  @include prefix(transition, opacity 180ms ease-in-out, webkit);
+  @include flex-center-all(column);
   position: absolute;
   top: 0;
   width: 100%;
@@ -50,11 +49,12 @@
   opacity: 0;
   pointer-events: none;
   background: rgba(0, 0, 0, .75);
+  transition: opacity 180ms ease-in-out;
 }
 
 
 .post__actions {
-  @include display-flex;
+  display: flex;
   font-size: 20px;
   list-style-type: none;
   pointer-events: auto;
@@ -65,7 +65,7 @@
 }
 
 
-$icon-dot: url('http://static.tumblr.com/gpf0ro1/mumnql4s6/dot-4x4.svg') 50% top no-repeat;
+$icon-dot: url('http://static.tumblr.com/gpf0ro1/BKonr1j9u/dot-4x4.svg') 50% top no-repeat;
 
 .icon {
   @include fa-icon-base;
@@ -89,7 +89,6 @@ $icon-dot: url('http://static.tumblr.com/gpf0ro1/mumnql4s6/dot-4x4.svg') 50% top
 
 .icon--heart {
   @include fa-icon(heart);
-  @include prefix(transition, color 100ms ease-in-out, webkit);
   padding-top: 1px;
 }
 
@@ -103,6 +102,17 @@ $icon-dot: url('http://static.tumblr.com/gpf0ro1/mumnql4s6/dot-4x4.svg') 50% top
 .icon--reblog {
   @include fa-icon(recycle);
   padding-top: 2px;
+}
+
+
+@keyframes heart {
+  0% {
+    font-size: 1px;
+  }
+
+  100% {
+    font-size: 20px;
+  }
 }
 
 
@@ -121,6 +131,7 @@ $icon-dot: url('http://static.tumblr.com/gpf0ro1/mumnql4s6/dot-4x4.svg') 50% top
 
   &.liked + .icon--heart {
     color: #d75f45;
+    animation: heart 150ms ease-in-out;
   }
 }
 
