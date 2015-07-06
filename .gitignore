@@ -2,6 +2,8 @@
 # Directories
 #---------------------------------
 **/node_modules/
+images/
+target/
 tmp/
 
 
