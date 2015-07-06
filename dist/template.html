@@ -1,0 +1,179 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>{Title}</title>
+
+  {block:IndexPage}
+  <link rel="stylesheet" href="http://static.tumblr.com/gpf0ro1/CUznr1k9j/index.css">
+  {/block:IndexPage}
+
+  {block:PermalinkPage}
+  <link rel="stylesheet" href="http://static.tumblr.com/gpf0ro1/BU9nr1k9q/permalink.css">
+  {/block:PermalinkPage}
+</head>
+
+
+<body>
+  <header class="header">
+    <h1 class="header__title"><a class="header__logo" href="{BlogURL}">{Title}</a></h1>
+  </header>
+
+
+  <main class="main">
+    {block:IndexPage}
+    <div class="posts g-row">
+      {block:Posts}
+      <div class="post">
+        {block:Photo}
+        <img class="post__image" src="{PhotoURL-500}" alt="">
+        {/block:Photo}
+
+        {block:Photoset}
+        {block:Photos}
+        <img class="post__image" src="{PhotoURL-500}" alt=""><!--
+        {/block:Photos}-->
+        {/block:Photoset}
+
+        <div class="post__overlay">
+          <ul class="post__actions">
+            <li>{LikeButton color="white" size="50"}<a class="icon icon--heart" href="javascript:"></a></li>
+            <li><a class="icon icon--reblog" href="{ReblogURL}" target="_blank"></a></li>
+            <li><a class="icon icon--link" href="{Permalink}" target="_blank"></a></li>
+            <li><a class="icon icon--bolt" href="javascript:"></a></li>
+          </ul>
+        </div>
+      </div>
+      {/block:Posts}
+    </div>
+
+    {block:Pagination}
+    <div class="pagination" aria-hidden="true">
+      {block:NextPage}
+      <a class="pagination__next" href="{NextPage}"></a>
+      {/block:NextPage}
+    </div>
+    {/block:Pagination}
+    {/block:IndexPage}
+
+
+    {block:PermalinkPage}
+    {block:Posts}
+    {block:Photo}
+    <div class="post g-row">
+      <div class="g-col md-2/3">
+        <img class="post__image" src="{PhotoURL-HighRes}" alt="">
+      </div>
+      <div class="g-col md-1/3">
+        <dl class="post__meta">
+          <dt>Description</dt>
+          <dd>{block:ContentSource}<a href="{SourceURL}" target="_blank">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
+
+          <dt>Posted</dt>
+          <dd>{Year} {Month} {DayOfMonth}</dd>
+
+          {block:RebloggedFrom}
+          <dt>Via</dt>
+          <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
+          {/block:RebloggedFrom}
+
+          {block:HasTags}
+          <dt>Tags</dt>
+          {block:Tags}
+          <dd><a href="{TagURL}">{Tag}</a></dd>
+          {/block:Tags}
+          {/block:HasTags}
+        </dl>
+
+        <ul class="post__actions">
+          <li>{LikeButton color="white" size="50"}<a class="icon icon--heart" href="javascript:"></a></li>
+          <li><a class="icon icon--reblog" href="{ReblogURL}"></a></li>
+          <li><a class="icon icon--follow" href="https://www.tumblr.com/follow/test-me-test-you-test-everyone" target="_blank"></a></li>
+          <li><a class="icon icon--pinterest" href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-HighRes}&amp;description={PlaintextCaption}" target="_blank"></a></li>
+          <li><a class="icon icon--twitter" href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+    {/block:Photo}
+
+    {block:Photoset}
+    <div class="post g-row">
+      <div class="g-col md-2/3">
+        {block:Photos}
+        <img class="post__image" src="{PhotoURL-HighRes}" alt="">
+        {/block:Photos}
+      </div>
+      <div class="g-col md-1/3">
+        <dl class="post__meta">
+          <dt>Description</dt>
+          <dd>{block:ContentSource}<a href="{SourceURL}" target="_blank">{/block:ContentSource}{PlaintextCaption}{block:ContentSource}</a>{/block:ContentSource}</dd>
+
+          <dt>Posted</dt>
+          <dd>{Year} {Month} {DayOfMonth}</dd>
+
+          {block:RebloggedFrom}
+          <dt>Via</dt>
+          <dd><a href="{ReblogParentURL}">{ReblogParentName}</a></dd>
+          {/block:RebloggedFrom}
+
+          {block:HasTags}
+          <dt>Tags</dt>
+          {block:Tags}
+          <dd><a href="{TagURL}">{Tag}</a></dd>
+          {/block:Tags}
+          {/block:HasTags}
+        </dl>
+
+        <ul class="post__actions">
+          <li>{LikeButton color="white" size="50"}<a class="icon icon--heart" href="javascript:"></a></li>
+          <li><a class="icon icon--reblog" href="{ReblogURL}"></a></li>
+          <li><a class="icon icon--follow" href="https://www.tumblr.com/follow/test-me-test-you-test-everyone" target="_blank"></a></li>
+          <li><a class="icon icon--twitter" href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+    {/block:Photoset}
+
+    {block:Text}
+    <div class="post post--photoset g-row">
+      <div class="g-col">
+        {block:Title}
+        <a href="{Permalink}">{Title}</a>
+        {/block:Title}
+        {block:Body}
+        {Body}
+        {/block:Body}
+      </div>
+    </div>
+    {/block:Text}
+    {block:Posts}
+    {/block:PermalinkPage}
+  </main>
+
+
+  {block:IndexPage}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://static.tumblr.com/gpf0ro1/Xbtnr1jbd/event-emitter.min.js"></script>
+  <script src="http://static.tumblr.com/gpf0ro1/QlWnr1jcb/jquery-imagesready.min.js"></script>
+  <script src="http://static.tumblr.com/gpf0ro1/uL4nr1jch/infinite-scroll.min.js"></script>
+  <!--[if lt IE 10]>
+  <script src="http://static.tumblr.com/gpf0ro1/CpQnr1jcl/match-media.min.js"></script>
+  <![endif]-->
+  <script src="http://static.tumblr.com/gpf0ro1/2qHnr1jcs/quartz.min.js"></script>
+  <script src="http://static.tumblr.com/gpf0ro1/Oqwnr1jcx/main.js"></script>
+  {/block:IndexPage}
+
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-64158810-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
