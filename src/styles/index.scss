@@ -28,14 +28,31 @@
 }
 
 
+@keyframes actions {
+  0% {
+    opacity: 0;
+    padding-top: 80px;
+  }
+
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+
+
 .post {
   position: relative;
   margin-bottom: 30px;
   overflow: hidden;
-  background: #fff;
+  //background: #fff;
 
   &:hover .post__overlay {
     opacity: 1;
+  }
+
+  &:hover .post__actions {
+    animation: actions 200ms ease-in-out;
   }
 }
 
