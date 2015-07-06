@@ -9,8 +9,10 @@ app.set('views', './views');
 app.use(express.static('.'));
 
 
+var images = require('./images/list');
+
 app.get('/', function(req, res){
-  res.render('index');
+  res.render('index', {images: images});
 });
 
 

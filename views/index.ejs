@@ -19,8 +19,9 @@
 
   <main class="main">
     <div class="posts g-row">
+      <% for(var i = 0; i < images.length; i++) {%>
       <div class="post">
-        <img class="post__image" src="/images/1.jpg">
+        <img class="post__image" src="/images/<%= images[i] %>">
         <div class="post__overlay">
           <ul class="post__actions">
             <li><a class="icon icon--heart" href="javascript:"></a></li>
@@ -30,18 +31,19 @@
           </ul>
         </div>
       </div>
+      <% } %>
     </div>
   </main>
 
 
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="/node_modules/event-emitter/dist/event-emitter.min.js"></script>
-  <script src="/node_modules/imagesready/dist/jquery-imagesready.min.js"></script>
-  <script src="/node_modules/infinite-scroll/dist/infinite-scroll.min.js"></script>
+  <script src="/node_modules/tumblr-theme/dist/event-emitter.min.js"></script>
+  <script src="/node_modules/tumblr-theme/dist/jquery-imagesready.min.js"></script>
+  <script src="/node_modules/tumblr-theme/dist/infinite-scroll.min.js"></script>
   <!--[if lt IE 10]>
-  <script src="/node_modules/quartz-layout/dist/match-media.min.js"></script>
+  <script src="/node_modules/tumblr-theme/dist/match-media.min.js"></script>
   <![endif]-->
-  <script src="/node_modules/quartz-layout/dist/quartz.min.js"></script>
+  <script src="/node_modules/tumblr-theme/dist/quartz.min.js"></script>
   <script src="/node_modules/tumblr-theme/dist/main.js"></script>
 </body>
 </html>
