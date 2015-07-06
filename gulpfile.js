@@ -141,8 +141,7 @@ gulp.task('build', gulp.series(
   'clean.dist',
   'copy.dist',
   'sass',
-  'uglify',
-  'headers'
+  'uglify'
 ));
 
 
@@ -152,5 +151,5 @@ gulp.task('default', gulp.series('set.dev', 'clean.target', 'copy.dev', 'sass', 
 }));
 
 
-gulp.task('dist:minor', gulp.series('build', 'bump.minor'));
-gulp.task('dist:patch', gulp.series('build', 'bump.patch'));
+gulp.task('dist:minor', gulp.series('build', 'bump.minor', 'headers'));
+gulp.task('dist:patch', gulp.series('build', 'bump.patch', 'headers'));
