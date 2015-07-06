@@ -8,8 +8,10 @@ gulp.task('sync', function(){
     .init({
       browser: 'firefox',
       files: ['./views/**/*', './images/**/*'],
+      injectChanges: false,
       notify: false,
       port: 8000,
-      proxy: 'localhost:7000'
+      proxy: 'localhost:7000',
+      reloadDelay: 1200
     });
 });
