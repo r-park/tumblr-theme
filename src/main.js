@@ -1,4 +1,4 @@
-$(function() {
+$(function(){
   $('.posts')
     .imagesReady()
     .then(function(posts){
