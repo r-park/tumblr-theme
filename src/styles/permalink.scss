@@ -1,7 +1,8 @@
 //===================================================================
 //  PERMALINK VIEW
 //===================================================================
-@import "common";
+@import "./settings";
+@import "./minx";
 
 
 .g-row {
@@ -41,7 +42,7 @@
 
   dt {
     margin-top: 3em;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
     padding-top: .75em;
     font-size: rem(11px);
     font-weight: 700;
