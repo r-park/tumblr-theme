@@ -118,8 +118,15 @@
 }
 
 
-.icon--pinterest {
-  @include fa-icon(pinterest-p);
+// pinterest icon
+.post__actions li > a[data-pin-log] {
+  @include fa-icon(pinterest-p, true);
+  width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+  color: #ccc !important;
+  text-align: center !important;
+  background: none !important;
 }
 
 
