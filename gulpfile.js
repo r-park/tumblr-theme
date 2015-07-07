@@ -94,6 +94,7 @@ gulp.task('sass', function compileSass(){
   return gulp.src(files.scss)
     .pipe(sass({
       errLogToConsole: true,
+      includePaths: ['./node_modules'],
       outputStyle: dev ? 'nested' : 'compressed',
       precision: 10,
       sourceComments: false
