@@ -1,8 +1,11 @@
 //===================================================================
 //  PERMALINK VIEW
 //===================================================================
-@import "./settings";
-@import "./minx";
+@import
+"./settings",
+"minx/src/settings",
+"minx/src/functions",
+"minx/src/mixins";
 
 
 .g-row {
@@ -61,6 +64,10 @@
   a {
     color: inherit;
     text-decoration: none;
+
+    &:hover {
+      color: $base-font-color;
+    }
   }
 }
 
