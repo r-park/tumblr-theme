@@ -69,6 +69,13 @@
       color: $base-font-color;
     }
   }
+
+  p {
+    margin-bottom: 19px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 
