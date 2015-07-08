@@ -7,6 +7,7 @@
 
   <title>tumblr – index</title>
 
+  <link rel="stylesheet" href="/node_modules/tumblr-theme/dist/common.css">
   <link rel="stylesheet" href="/node_modules/tumblr-theme/dist/index.css">
 </head>
 
@@ -21,7 +22,7 @@
     <div class="posts g-row">
       <% for(var i = 0; i < images.length; i++) {%>
       <div class="post">
-        <img class="post__image" src="/images/<%= images[i] %>">
+        <img class="post__image" src="/images/<%= images[i].src %>" alt="<%= images[i].alt %>">
         <div class="post__overlay">
           <ul class="post__actions">
             <li><a class="icon icon--heart" href="javascript:"></a></li>
