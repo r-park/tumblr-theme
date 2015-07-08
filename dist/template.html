@@ -32,12 +32,12 @@
       {block:Posts}
       <div class="post">
         {block:Photo}
-        <img class="post__image" src="{PhotoURL-500}" alt="">
+        <img class="post__image" src="{PhotoURL-500}" alt="{PlaintextCaption}">
         {/block:Photo}
 
         {block:Photoset}
         {block:Photos}
-        <img class="post__image" src="{PhotoURL-500}" alt=""><!--
+        <img class="post__image" src="{PhotoURL-500}" alt="{PlaintextCaption}"><!--
         {/block:Photos}-->
         {/block:Photoset}
 
@@ -66,7 +66,7 @@
     {block:PermalinkPage}
     {block:Posts}
     {block:Photo}
-    <div class="post g-row">
+    <div class="post post--photo g-row">
       <div class="g-col md-2/3">
         <img class="post__image" src="{PhotoURL-HighRes}" alt="">
       </div>
@@ -105,7 +105,7 @@
     {/block:Photo}
 
     {block:Photoset}
-    <div class="post g-row">
+    <div class="post post--photoset g-row">
       <div class="g-col md-2/3">
         {block:Photos}
         <img class="post__image" src="{PhotoURL-HighRes}" alt="">
