@@ -12,3 +12,14 @@
 "header",
 "main",
 "pagination";
+
+
+a {
+  outline: none;
+}
+
+
+::selection {
+  color: #333;
+  background: rgba(0,0,0,0.08);
+}
