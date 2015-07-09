@@ -136,7 +136,7 @@
 // pinterest icon
 .post-photo__actions li > a[data-pin-log] {
   @include fa-icon(pinterest-p, true);
-  padding: 2px 0 0 2px !important;
+  padding: 2px 0 0 1px !important;
   width: 50px !important;
   height: 50px !important;
   line-height: 50px !important;
