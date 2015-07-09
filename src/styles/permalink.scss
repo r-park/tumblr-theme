@@ -24,42 +24,20 @@
 }
 
 
+/*===============================================
+  POST
+-----------------------------------------------*/
 .post {
   overflow: hidden;
 }
 
 
-.post--photoset {
-  .post__image {
-    margin-bottom: 10px;
-  }
-}
-
-
-.post__meta {
-  margin-bottom: 3em;
-
-  @include media-query($max: medium) {
-    padding-top: 2em;
-  }
-
-  dt {
-    margin-top: 3em;
-    border-top: 1px solid #ddd;
-    padding-top: .75em;
-    font-size: rem(11px);
-    font-weight: 700;
-    line-height: (19px / 11px);
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  dd {
-    line-height: (19px / $base-font-size);
-    color: #666;
-  }
+/*===============================================
+  POST-META
+-----------------------------------------------*/
+.post-meta {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
 
   a {
     color: inherit;
@@ -69,22 +47,85 @@
       color: $base-font-color;
     }
   }
+}
 
-  p {
-    margin-bottom: 19px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+
+.post-meta__title {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: .5em;
+  font-size: rem(11px);
+  font-weight: 700;
+  line-height: (20px / 11px);
+
+  &:first-child {
+    margin-top: 0;
   }
 }
 
 
-.post__actions {
+.post-meta__def {
+  line-height: (20px / $base-font-size);
+  color: #666;
+}
+
+
+.post-actions {
   display: flex;
+
   margin-left: -15px;
+  padding-top: .5em;
+
   font-size: 20px;
   list-style-type: none;
-  pointer-events: auto;
+
+  li {
+    position: relative;
+  }
+
+  .icon {
+    color: #ccc;
+  }
+}
+
+
+/*===============================================
+  POST-PHOTO
+-----------------------------------------------*/
+@keyframes actions {
+  0% {
+    opacity: 0;
+    padding-top: 80px;
+  }
+
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+
+
+.post-photo {
+  position: relative;
+  margin-bottom: 10px;
+
+  &:hover .post-photo__actions {
+    opacity: 1;
+  }
+}
+
+
+.post-photo__actions {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin: 10px 0 0 10px;
+  border-radius: 100px;
+  opacity: 0;
+  font-size: 20px;
+  list-style-type: none;
+  background: rgba(0, 0, 0, .5);
+  transition: opacity 180ms ease-in-out;
 
   li {
     position: relative;
@@ -92,83 +133,23 @@
 }
 
 
-.icon {
-  @include fa-icon-base;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  color: #ccc;
-  text-align: center;
-  text-decoration: none;
-}
-
-
-.icon--bolt {
-  @include fa-icon(bolt);
-}
-
-
-.icon--follow {
-  @include fa-icon(plus);
-}
-
-
-.icon--heart {
-  @include fa-icon(heart);
-}
-
-
 // pinterest icon
-.post__actions li > a[data-pin-log] {
+.post-photo__actions li > a[data-pin-log] {
   @include fa-icon(pinterest-p, true);
+  padding: 2px 0 0 2px !important;
   width: 50px !important;
   height: 50px !important;
   line-height: 50px !important;
-  color: #ccc !important;
   text-align: center !important;
+  text-decoration: none !important;
+  color: #fff !important;
   background: none !important;
 }
 
 
-.icon--reblog {
-  @include fa-icon(recycle);
-  padding-top: 1px;
-}
-
-
-.icon--twitter {
-  @include fa-icon(twitter);
-  font-size: 21px;
-}
-
-
-@keyframes heart {
-  0% {
-    font-size: 1px;
-  }
-
-  100% {
-    font-size: 20px;
-  }
-}
-
-
-.like_button {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 5;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
-
-  &.liked + .icon--heart {
-    color: #d75f45;
-    animation: heart 200ms ease-in-out;
-  }
-}
-
-
+/*===============================================
+  TUMBLR CONTROLS
+-----------------------------------------------*/
 #tumblr_controls.tumblr_controls {
   display: none;
 }

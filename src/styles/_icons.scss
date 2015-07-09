@@ -1,0 +1,78 @@
+
+
+
+$icon-dot: url('http://static.tumblr.com/gpf0ro1/BKonr1j9u/dot-4x4.svg') 50% top no-repeat;
+
+.icon {
+  @include fa-icon-base;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background: $icon-dot;
+  }
+}
+
+
+.icon--follow {
+  @include fa-icon(plus);
+}
+
+
+.icon--heart {
+  @include fa-icon(heart);
+  padding-top: 1px;
+}
+
+
+.icon--permalink {
+  @include fa-icon(link);
+  padding-top: 1px;
+}
+
+
+.icon--reblog {
+  @include fa-icon(recycle);
+  padding-top: 2px;
+}
+
+
+.icon--twitter {
+  @include fa-icon(twitter);
+  font-size: 22px;
+}
+
+
+@keyframes heart {
+  0% {
+    font-size: 1px;
+  }
+
+  100% {
+    font-size: 20px;
+  }
+}
+
+
+.like_button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+
+  &:hover + .icon--heart {
+    background: $icon-dot;
+  }
+
+  &.liked + .icon--heart {
+    color: #d75f45;
+    animation: heart 200ms ease-in-out;
+  }
+}
