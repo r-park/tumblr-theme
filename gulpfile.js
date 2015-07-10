@@ -6,6 +6,8 @@ var browserSync = require('browser-sync'),
 gulp.task('server', function(){
   nodemon({
     script: 'server.js',
+    ext: 'js',
+    watch: ['images/'],
     env: { 'NODE_ENV': 'development' }
   })
 });
@@ -16,7 +18,7 @@ gulp.task('sync', function(){
     .create()
     .init({
       browser: 'firefox',
-      files: ['./views/**/*', './images/**/*'],
+      files: ['./views/**/*', './list.js'],
       injectChanges: false,
       notify: false,
       port: 8000,

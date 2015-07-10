@@ -9,7 +9,7 @@ app.set('views', './views');
 app.use(express.static('.'));
 
 
-var images = require('./images/list');
+var images = require('./list');
 
 app.get('/', function(req, res){
   res.render('index', {images: images});
